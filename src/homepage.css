@@ -3,6 +3,35 @@ body, html {
     margin: 0;
   }
   
+  .content {
+    margin-left: 200px;
+    padding-top: 80px; 
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999; 
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: flex-end; 
+  }
+  
+  .nav-links li {
+    margin-left: 20px; 
+  }
+  
+  .nav-links li:last-child {
+    margin-left: 0;
+  }
+  
   .background-video {
     position: fixed;
     top: 0;
