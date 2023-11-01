@@ -1,15 +1,12 @@
-/* cart.css */
-
 body {
     margin: 0;
     padding: 0;
-    background-color: #3e444c; 
     font-family: Arial, sans-serif;
   }
   
   .page-wrapper {
     max-width: 100%;
-    width: 1440px; /* Set the maximum width of your content to 1440px */
+    width: 1440px; 
     margin: 0 auto; 
     padding: 20px;
     background-color: #fff;
@@ -74,7 +71,7 @@ table {
     background-color: #3e8e41;
   }
   
-  /* cart.css */
+  
 
 
 .payment-alert {
@@ -85,6 +82,7 @@ table {
     background-color: #0bd741;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1000; 
   }
   
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './cart.css';
 
+
 const ShoppingCart = () => {
   const [cart, setCart] = useState([
     {
@@ -43,7 +44,8 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div>
+    <div id="shoppo">
+     
       <h2>Shopping Cart</h2>
       <table>
         <thead>
