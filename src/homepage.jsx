@@ -1,21 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import digagaVideo from '../src/tools/digaga.mp4';
-import './homepage.css';
 import Navbar from './navbar'; 
-
+import Cart from './cart'
+import './homepage.css';
 import { FaTwitter, FaInstagram, FaComments } from 'react-icons/fa';
 
 function Homepage() {
  return (
     <div>
-        <Router>
-      <div>
+      <Router>
+       <div>
         <Navbar />
-        <Routes>
-        </Routes>
-      </div>
-    </Router>
+          <Cart/>
+        </div>
+      </Router>
       <div className="background-video">
         <video autoPlay muted loop className="video-element">
           <source src={digagaVideo} type="video/mp4" />

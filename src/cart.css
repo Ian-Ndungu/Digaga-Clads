@@ -1,0 +1,90 @@
+/* cart.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3e444c; /* Set the background color of the entire page */
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-wrapper {
+    max-width: 100%;
+    width: 1440px; /* Set the maximum width of your content to 1440px */
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .payment-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0bd741;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #958888;
+    color: white;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  p {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* cart.css */
+
+
+.payment-alert {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #0bd741;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
