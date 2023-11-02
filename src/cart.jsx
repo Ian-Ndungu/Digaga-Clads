@@ -61,7 +61,7 @@ function ShoppingCart() {
         </tfoot>
       </table>
 
-      <button className="shopping-cart-button" onClick={proceedToPayPal}>Proceed to PayPal</button>
+      <button className="shopping-cart-button shopping-cart-button-right" onClick={proceedToPayPal}>Proceed to PayPal</button>
     </div>
   );
 }
