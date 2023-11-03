@@ -1,0 +1,23 @@
+name: Digaga merger
+
+on:
+  push:
+    branches:
+     '*'
+
+jobs:
+  create-catch-up-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create Catch-up PR
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: my-branch
+        title: "Developer auto-merger."
+        body: "Will merge all our branches to the developer branch."
+        base: developer
