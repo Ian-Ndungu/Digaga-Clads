@@ -35,7 +35,7 @@ const Navbar = () => {
           </ul>
         </li>
         
-        <li><Link to="/aboutus">About</Link></li>
+        <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/signup">SignUp</Link></li>
         <li><Link to="/cart"><FaShoppingBag className="shopping-bag-icon" /></Link></li>
