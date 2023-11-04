@@ -4,6 +4,11 @@
   top: 0;
   left: 0;
   width: 100%;
+  
+}
+#dashboard :hover{
+  background-color: #fff;
+
 }
 
 .navbar {
@@ -13,6 +18,7 @@
   padding: 10px 20px;
   color: #fff;
 }
+
 .navbar h1 {
   font-size: 2rem;
   margin: 0;

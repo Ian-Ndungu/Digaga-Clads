@@ -4,6 +4,7 @@ import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
 import './App.css';
+import Footer from './footer';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
          
           {/* You can define other routes here as needed */}
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

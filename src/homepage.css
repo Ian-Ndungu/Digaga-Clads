@@ -31,29 +31,6 @@ body, html {
   }
   
 
-  .footer {
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
-  .footer p {
-    font-size: 14px;
-    color: #f9f9f9;
-    margin: 0;
-  }
-  
-  .twitter-icon,
-  .instagram-icon,
-  .threads-icon {
-    font-size: 24px;
-    margin: 0 10px;
-    color: #f9f9f9;
-  }
+
   
