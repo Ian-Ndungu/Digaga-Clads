@@ -1,11 +1,11 @@
 import React from 'react' 
-import Men from './men'
+import Women from './women'
 
 function App() 
 {
   return (
   <div>
-    < Men/> 
+    < Women/> 
   </div>
   )
 }

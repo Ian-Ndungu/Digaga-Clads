@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const menData = [
+const WomenData = [
   {
     id: 1,
     name: 'Suits',
@@ -31,7 +31,7 @@ const menData = [
   },
 ];
 
-const Men = () => {
+const Women = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedColor, setSelectedColor] = useState('All');
   const [selectedSize, setSelectedSize] = useState('All');
@@ -51,12 +51,12 @@ const Men = () => {
   };
 
   const filteredCategories = selectedCategory === 'All'
-    ? menData
-    : menData.filter((item) => item.category === selectedCategory);
+    ? WomenData
+    : WomenData.filter((item) => item.category === selectedCategory);
 
   return (
     <div>
-      <h1>Men's Page</h1>
+      <h1>Women's Page</h1>
 
       <div>
         <h2>Categories</h2>
@@ -112,4 +112,4 @@ const Men = () => {
   );
 }
 
-export default Men;
+export default Women;
