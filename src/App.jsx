@@ -1,5 +1,5 @@
 import React from 'react' 
-import Women from './women'
+import Women from './kids'
 
 function App() 
 {

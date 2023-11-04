@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './women.css'
+import './kids.css'
 
-const Women = () => {
+const kids = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedClothing, setSelectedClothing] = useState('All');
   const [selectedColor, setSelectedColor] = useState('All');
@@ -10,7 +10,7 @@ const Women = () => {
 
 
   //test data to see functionality
-  const womenData = [
+  const kidsData = [
     {
       id: 1,
       name: 'Suits',
@@ -44,9 +44,9 @@ const Women = () => {
   // clothing by user selection
   const getAvailableClothing = () => {
     if (selectedCategory === 'All') {
-      return womenData;
+      return kidsData;
     }
-    return womenData.filter((item) => item.category === selectedCategory);
+    return kidsData.filter((item) => item.category === selectedCategory);
   };
 
   // color by user selection
@@ -74,11 +74,11 @@ const Women = () => {
       .map((detail) => detail.size);
   };
 
-//filtering based on the data given in the womenData
+//filtering based on the data given in the kidsData
 
   return (
     <div>
-      <h1>Women's Page</h1>
+      <h1>Kids's Page</h1>
 
       <div>
         <h2>Categories: </h2>
@@ -143,4 +143,4 @@ const Women = () => {
   );
 };
 
-export default Women;
+export default Kids;
