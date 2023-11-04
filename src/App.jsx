@@ -1,11 +1,16 @@
 import React from 'react' 
-import Homepage from './homepage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Cart from './cart'
+
 function App() {
   return (
   <div>
-    < Homepage/>
+         <Router>
+      
+          <Cart/> 
+         </Router>
   </div>
   )
 }
 
-export default App
+export default App;
