@@ -55,4 +55,4 @@ The React components and logic for this filtering app are organized as follows:
 
 **Test Data**
 
-Test data in the `menData` variable provides sample clothing items and their details for demonstration purposes. You can replace this data with your own clothing data.
+Dummy data was made in the `menData` variable where sample clothing items and their details were added for demonstration purposes. Will be replaced with clothing data to be included in the backend too.
