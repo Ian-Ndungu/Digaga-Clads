@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './men.css'
 
 const Men = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -83,16 +84,16 @@ const Men = () => {
         <h2>Categories: </h2>
         <ul>
           <li>
-            <button onClick={() => setSelectedCategory('All')}>All</button>
+            <button id="mainButton" onClick={() => setSelectedCategory('All')}>All</button>
           </li>
           <li>
-            <button onClick={() => setSelectedCategory('Official')}>Official</button>
+            <button id="mainButton" onClick={() => setSelectedCategory('Official')}>Official</button>
           </li>
           <li>
-            <button onClick={() => setSelectedCategory('Casual')}>Casual</button>
+            <button id="mainButton" onClick={() => setSelectedCategory('Casual')}>Casual</button>
           </li>
           <li>
-            <button onClick={() => setSelectedCategory('Smart Casual')}>Smart Casual</button>
+            <button id="mainButton" onClick={() => setSelectedCategory('Smart Casual')}>Smart Casual</button>
           </li>
         </ul>
       </div>
@@ -105,7 +106,7 @@ const Men = () => {
           </li>
           {getAvailableClothing().map((item) => (
             <li key={item.name}>
-              <button onClick={() => setSelectedClothing(item.name)}>{item.name}</button>
+              <button id="mainButton" onClick={() => setSelectedClothing(item.name)}>{item.name}</button>
             </li>
           ))}
         </ul>
@@ -119,7 +120,7 @@ const Men = () => {
           </li>
           {getAvailableColors().map((color) => (
             <li key={color}>
-              <button onClick={() => setSelectedColor(color)}>{color}</button>
+              <button id="mainButton" onClick={() => setSelectedColor(color)}>{color}</button>
             </li>
           ))}
         </ul>
@@ -133,7 +134,7 @@ const Men = () => {
           </li>
           {getAvailableSizes().map((size) => (
             <li key={size}>
-              <button onClick={() => setSelectedSize(size)}>{size}</button>
+              <button id="mainButton" onClick={() => setSelectedSize(size)}>{size}</button>
             </li>
           ))}
         </ul>
