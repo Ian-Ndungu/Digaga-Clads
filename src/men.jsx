@@ -105,46 +105,6 @@ return (
               </div>
             </li>
           ))};
-
-          {menData.map((item) => (
-            <li key={item.id}>
-              <div className="category-alignment">
-                <SelectedImage
-                  imageUrl={{
-                    normal: '/smartcasual.jpeg',
-                    hover: '/smartcasual.jpeg',
-                  }}
-                  altText="Smart Casual category"
-                  category="Smart Casual"
-                  availableClothing={getAvailableClothing()}
-                  onCategoryChange={setSelectedCategory}
-                  onClothingChange={setSelectedClothing}
-                  onColorChange={setSelectedColor}
-                  onSizeChange={setSelectedSize}
-                />
-              </div>
-            </li>
-          ))};
-
-          {menData.map((item) => (
-            <li key={item.id}>
-              <div className="category-alignment">
-                <SelectedImage
-                  imageUrl={{
-                    normal: '/casual.jpeg',
-                    hover: '/casual.jpeg',
-                  }}
-                  altText="Casual category"
-                  category="Casual"
-                  availableClothing={getAvailableClothing()}
-                  onCategoryChange={setSelectedCategory}
-                  onClothingChange={setSelectedClothing}
-                  onColorChange={setSelectedColor}
-                  onSizeChange={setSelectedSize}
-                />
-              </div>
-            </li>
-          ))}
         </ul>
       </div>
     </div>

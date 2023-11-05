@@ -44,6 +44,7 @@ const SelectedImage = ({  imageUrl, altText, category, availableClothing, onCate
     borderRadius: '20%', // soft corners.
     border: isClicked ? '2px solid #3498db' : 'none', //border line to higlight hovered image.
   };
+    // rid image then addd in button functionality.
 
   const categoryLink = null; 
 
