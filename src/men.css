@@ -1,4 +1,17 @@
-#mainButton {
+.landingbg {
+  background-image: url('/Landingpg.jpeg'); 
+  background-size: cover;
+  background-position: center; 
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vh; 
+  /* without width covers only the containers */
+}
+
+#mainButton 
+{
     background-color: rgb(48, 63, 73);
     color: #ffffff;
     padding: 10px 20px;
@@ -16,5 +29,38 @@
  
   #mainButton:active {
     background-color: rgb(18, 89, 137)
-  }
-  
+}
+
+.selected-image 
+{
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 200px;
+  height: 200px;
+  text-align: left;
+}
+
+.selected-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-image:hover {
+  transform: scale(1.1); 
+  /* scale ratio */
+}
+
+.selected-image.clicked {
+  border: 2px solid rgb(186, 202, 8) 129, 204; 
+}
+
+.category-alignment {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  text-align: center;
+  margin-right: 30px;
+  text-align: left;
+
+}

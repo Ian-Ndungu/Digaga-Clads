@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './men.css'
+import SelectedImage from './selectedImg';
+//allow for the Selected images to be called
 
 const Men = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedClothing, setSelectedClothing] = useState('All');
   const [selectedColor, setSelectedColor] = useState('All');
   const [selectedSize, setSelectedSize] = useState('All');
+  
   //All is to reset the selection to default for the user.
-
 
   //test data to see functionality
   const menData = [
@@ -76,71 +78,79 @@ const Men = () => {
 
 //filtering based on the data given in the menData
 
-  return (
+return (
+  <div className="landingbg">
     <div>
       <h1>Men's Page</h1>
 
-      <div>
+      <div className="categories-section">
         <h2>Categories: </h2>
         <ul>
-          <li>
-            <button id="mainButton" onClick={() => setSelectedCategory('All')}>All</button>
-          </li>
-          <li>
-            <button id="mainButton" onClick={() => setSelectedCategory('Official')}>Official</button>
-          </li>
-          <li>
-            <button id="mainButton" onClick={() => setSelectedCategory('Casual')}>Casual</button>
-          </li>
-          <li>
-            <button id="mainButton" onClick={() => setSelectedCategory('Smart Casual')}>Smart Casual</button>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>Clothing: </h2>
-        <ul>
-          <li>
-            <button onClick={() => setSelectedClothing('All')}>All</button>
-          </li>
-          {getAvailableClothing().map((item) => (
-            <li key={item.name}>
-              <button id="mainButton" onClick={() => setSelectedClothing(item.name)}>{item.name}</button>
+          {menData.map((item) => (
+            <li key={item.id}>
+              <div className="category-alignment">
+                <SelectedImage
+                  imageUrl={{
+                    normal: '/Suitsicon.jpeg',
+                    hover: '/Suitsicon.jpeg',
+                  }}
+                  altText="Official category"
+                  category="Official"
+                  availableClothing={getAvailableClothing()}
+                  onCategoryChange={setSelectedCategory}
+                  onClothingChange={setSelectedClothing}
+                  onColorChange={setSelectedColor}
+                  onSizeChange={setSelectedSize}
+                />
+              </div>
             </li>
-          ))}
-        </ul>
-      </div>
+          ))};
 
-      <div>
-        <h2>Colors: </h2>
-        <ul>
-          <li>
-            <button onClick={() => setSelectedColor('All')}>All Colors</button>
-          </li>
-          {getAvailableColors().map((color) => (
-            <li key={color}>
-              <button id="mainButton" onClick={() => setSelectedColor(color)}>{color}</button>
+          {menData.map((item) => (
+            <li key={item.id}>
+              <div className="category-alignment">
+                <SelectedImage
+                  imageUrl={{
+                    normal: '/smartcasual.jpeg',
+                    hover: '/smartcasual.jpeg',
+                  }}
+                  altText="Smart Casual category"
+                  category="Smart Casual"
+                  availableClothing={getAvailableClothing()}
+                  onCategoryChange={setSelectedCategory}
+                  onClothingChange={setSelectedClothing}
+                  onColorChange={setSelectedColor}
+                  onSizeChange={setSelectedSize}
+                />
+              </div>
             </li>
-          ))}
-        </ul>
-      </div>
+          ))};
 
-      <div>
-        <h2>Sizes: </h2>
-        <ul>
-          <li>
-            <button onClick={() => setSelectedSize('All')}>All Sizes</button>
-          </li>
-          {getAvailableSizes().map((size) => (
-            <li key={size}>
-              <button id="mainButton" onClick={() => setSelectedSize(size)}>{size}</button>
+          {menData.map((item) => (
+            <li key={item.id}>
+              <div className="category-alignment">
+                <SelectedImage
+                  imageUrl={{
+                    normal: '/casual.jpeg',
+                    hover: '/casual.jpeg',
+                  }}
+                  altText="Casual category"
+                  category="Casual"
+                  availableClothing={getAvailableClothing()}
+                  onCategoryChange={setSelectedCategory}
+                  onClothingChange={setSelectedClothing}
+                  onColorChange={setSelectedColor}
+                  onSizeChange={setSelectedSize}
+                />
+              </div>
             </li>
           ))}
         </ul>
       </div>
     </div>
-  );
+  </div>
+)
 };
 
 export default Men;
+
