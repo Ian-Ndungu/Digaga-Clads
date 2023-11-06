@@ -4,6 +4,7 @@ import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
 import About from './about';
+import Footer from './footer';
 import './App.css';
 
 function App() {
@@ -15,8 +16,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About/>}/>
-          {/* You can define other routes here as needed */}
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
