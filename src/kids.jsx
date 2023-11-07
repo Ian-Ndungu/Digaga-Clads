@@ -2,25 +2,27 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import  './kids.css'
 
-const Kids = ({kidsData}) => 
+const Kids = () => 
 {
-  const { category } = useParams();
+  useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const filteredData = kidsData.filter((item) => {
+  const filteredData = Kids.filter((item) => {
   (selectedCategory === 'All' || item.name === selectedCategory).map(
   (item) => item.details)
   .flat();
   });
-  //All is to reset the selection to default for the user.
+
+  //flat 'compresses' the nested arrays to a single array
+  // for the needed data. 
 
   const fetchData = async () => {
     try {
-      const response = await fetch('Digaga-clads-url');
+      const response = await fetch('digaga-clads-url');
       if (!response.ok) {
         throw new Error('Network error!');
       }
       const data = await response.json();
-      setKidsData(data);
+      setKids(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -32,23 +34,23 @@ const Kids = ({kidsData}) =>
 
   useEffect(() => {
     // selectedCategory filter
-    const newFilteredData = kidsData.filter((item) => {
+    const newFilteredData = Kids.filter((item) => {
       return selectedCategory === 'All' || item.name === selectedCategory;
     });
     setFilteredData(newFilteredData);
-  }, [selectedCategory, kidsData]);
-// API fetch function.
+  }, [selectedCategory]);
+    // API fetch function.
 
   return (
     <div>
-    <h1>Kids Products</h1>
+    <h1>Kid's Products</h1>
     <div>
       <h2>Categories:</h2>
       <ul>
         <li>
           <button onClick={() => setSelectedCategory('All')}>All</button>
         </li>
-        {kidsData.map((item) => (
+        {Kids.map((item) => (
           <li key={item.id}>
             <button onClick={() => setSelectedCategory(item.name)}>
               {item.name}

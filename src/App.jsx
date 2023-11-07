@@ -1,16 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch as RouterSwitch } from 'react-router-dom';
-import Kids from './Kids';
+import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, useParams, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [kidsData, setKidsData] = useState([]);
+  const [Kids, setKids] = useState([]);
   const { category } = useParams();
-  const RouterSwitch = 'A Switch'; 
 
   useEffect(() => {
     if (category) {
-      const apiUrl = `digaga-clads-url/${category}`;
+      const apiUrl = 'digaga-clads-url/kids/${category}';
       
       fetch(apiUrl)
         .then((response) => {
@@ -20,7 +18,7 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setKidsData(data);
+          setKids(data);
         })
         .catch((error) => {
           console.error('Error fetching kids data:', error);
@@ -29,15 +27,12 @@ function App() {
   }, [category]);
 
   return (
-
+    
     <Router>
-      <div>
-        <RouterSwitch>
-          <Route path="/kids/:category">
-            <Kids kidsData={kidsData} />
-          </Route>
-        </RouterSwitch>
-      </div>
+      <Routes>
+      <Route path="/kids/:category" 
+      element={<Kids />} />
+      </Routes>
     </Router>
   );
 }
