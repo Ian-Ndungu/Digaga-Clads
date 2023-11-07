@@ -16,7 +16,7 @@ function App() {
         <Navbar /> {/* This component can remain outside the router */}
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/cart" element={<Cart />} 
+          <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/about" element={<About/>}/>
