@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Kids from './kids';
+import { BrowserRouter as Router, Route, Switch as RouterSwitch } from 'react-router-dom';
+import Kids from './Kids';
 
 function App() {
 
   const [kidsData, setKidsData] = useState([]);
   const { category } = useParams();
+  const RouterSwitch = 'A Switch'; 
 
   useEffect(() => {
     if (category) {
@@ -31,11 +32,11 @@ function App() {
 
     <Router>
       <div>
-        <Switch>
+        <RouterSwitch>
           <Route path="/kids/:category">
             <Kids kidsData={kidsData} />
           </Route>
-        </Switch>
+        </RouterSwitch>
       </div>
     </Router>
   );
