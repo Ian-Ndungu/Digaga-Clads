@@ -6,11 +6,7 @@ const Women = ({womenData}) =>
 {
   const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const filteredData = womenData.filter((item) => {
-  (selectedCategory === 'All' || item.name === selectedCategory).map(
-    (item) => item.details)
-  .flat();
-  });
+  const [filteredData, setFilteredData] = useState([]);
   //All is to reset the selection to default for the user.
 
   const fetchData = async () => {
@@ -20,7 +16,7 @@ const Women = ({womenData}) =>
         throw new Error('Network error!');
       }
       const data = await response.json();
-      setKidsData(data);
+      setWomenData(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -28,16 +24,18 @@ const Women = ({womenData}) =>
 
   useEffect(() => {
     fetchData();
-  }, []); //Empty to feetch on completion.
+  }, []); 
+  //Empty to fetch on completion.
 
   useEffect(() => {
     // selectedCategory filter
-    const newFilteredData = kidsData.filter((item) => {
-      return selectedCategory === 'All' || item.name === selectedCategory;
-    });
+    const newFilteredData = womenData.filter((item) =>
+     selectedCategory === 'All' || item.name === selectedCategory)
+      .flatMap((item) => item.details);
     setFilteredData(newFilteredData);
-  }, [selectedCategory, kidsData]);
-// API fetch function.
+  }, [selectedCategory, womenData]);
+  //flatMap flattens data from Women category based on category and 
+  // 'compresses' the nested data array into a single array of details.
 
   return (
     <div>
@@ -70,6 +68,5 @@ const Women = ({womenData}) =>
   </div>
 );
 };
-
 
 export default Women;
