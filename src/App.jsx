@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
+import Contact from './contact';
 import About from './about';
 import Footer from './footer';
 import './App.css';
@@ -14,7 +15,8 @@ function App() {
         <Navbar /> {/* This component can remain outside the router */}
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} 
+          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About/>}/>
         </Routes>
         <Footer/>
