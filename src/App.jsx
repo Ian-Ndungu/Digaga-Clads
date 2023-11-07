@@ -1,15 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Women from './women';
+import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, useParams, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [womenData, setWomenData] = useState([]);
+  const [Women, setWomen] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
     if (category) {
-      const apiUrl = `digaga-clads-url/${category}`;
+      const apiUrl = 'digaga-clads-url/women/${category}';
       
       fetch(apiUrl)
         .then((response) => {
@@ -19,24 +18,21 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setWomenData(data);
+          setWomen(data);
         })
         .catch((error) => {
-          console.error('Error fetching women data:', error);
+          console.error('Error fetching Women data:', error);
         });
     }
   }, [category]);
 
   return (
-
+    
     <Router>
-      <div>
-        <Switch>
-          <Route path="/Women/:category">
-            <Women womenData={womenData} />
-          </Route>
-        </Switch>
-      </div>
+      <Routes>
+      <Route path="/women/:category" 
+      element={<Women />} />
+      </Routes>
     </Router>
   );
 }
