@@ -2,21 +2,27 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import  './women.css'
 
-const Women = ({womenData}) => 
+const Women = () => 
 {
-  const { category } = useParams();
+  useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [filteredData, setFilteredData] = useState([]);
-  //All is to reset the selection to default for the user.
+  const filteredData = Women.filter((item) => {
+  (selectedCategory === 'All' || item.name === selectedCategory).map(
+  (item) => item.details)
+  .flat();
+  });
+
+  //flat 'compresses' the nested arrays to a single array
+  // for the needed data. 
 
   const fetchData = async () => {
     try {
-      const response = await fetch('Digaga-clads-url');
+      const response = await fetch('digaga-clads-url');
       if (!response.ok) {
         throw new Error('Network error!');
       }
       const data = await response.json();
-      setWomenData(data);
+      setWomen(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -24,29 +30,27 @@ const Women = ({womenData}) =>
 
   useEffect(() => {
     fetchData();
-  }, []); 
-  //Empty to fetch on completion.
+  }, []); //Empty to feetch on completion.
 
   useEffect(() => {
     // selectedCategory filter
-    const newFilteredData = womenData.filter((item) =>
-     selectedCategory === 'All' || item.name === selectedCategory)
-      .flatMap((item) => item.details);
+    const newFilteredData = Women.filter((item) => {
+      return selectedCategory === 'All' || item.name === selectedCategory;
+    });
     setFilteredData(newFilteredData);
-  }, [selectedCategory, womenData]);
-  //flatMap flattens data from Women category based on category and 
-  // 'compresses' the nested data array into a single array of details.
+  }, [selectedCategory]);
+    // API fetch function.
 
   return (
     <div>
-    <h1>Women Products</h1>
+    <h1>Women's Products</h1>
     <div>
       <h2>Categories:</h2>
       <ul>
         <li>
           <button onClick={() => setSelectedCategory('All')}>All</button>
         </li>
-        {womenData.map((item) => (
+        {Women.map((item) => (
           <li key={item.id}>
             <button onClick={() => setSelectedCategory(item.name)}>
               {item.name}
@@ -68,5 +72,6 @@ const Women = ({womenData}) =>
   </div>
 );
 };
+
 
 export default Women;
