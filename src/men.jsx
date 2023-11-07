@@ -39,7 +39,7 @@ const Men = ({menData}) =>
     });
     setFilteredData(newFilteredData);
   }, [selectedCategory, kidsData]);
-// API fetch function.
+  // API fetch function.
 
   return (
     <div>
