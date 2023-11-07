@@ -1,16 +1,28 @@
-import React from 'react' 
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Cart from './cart'
+import Homepage from './homepage';
+import Cart from './cart';
+import Navbar from './navbar';
+import Contact from './contact';
+import About from './about';
+import Footer from './footer';
+import './App.css';
 
 function App() {
   return (
-  <div>
-         <Router>
-      
-          <Cart/> 
-         </Router>
-  </div>
-  )
+    <Router>
+      <div>
+        <Navbar /> {/* This component can remain outside the router */}
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/cart" element={<Cart />} 
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About/>}/>
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
