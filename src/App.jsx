@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
+import Contact from './contact';
 import './App.css';
 import Footer from './footer';
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<Cart />} />
-         
+          <Route path="/contact" element={<Contact />} />
           {/* You can define other routes here as needed */}
         </Routes>
         <Footer/>
