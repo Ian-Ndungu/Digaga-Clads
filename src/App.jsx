@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Kids from './kids';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Kids from './Kids';
 import kidsData from './kidsData'
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/kids/Official">Official</Link>
           </li>
@@ -18,13 +18,11 @@ function App() {
           <li>
             <Link to="/kids/Smart Casual">Smart Casual</Link>
           </li>
-        </ul>
-
-        <Switch>
+        </ul> */}
           <Route path="/kids/:category">
             <Kids kidsData={kidsData} />
           </Route>
-        </Switch>
+        
       </div>
     </Router>
   );
