@@ -1,15 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Men from './men';
+import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, useParams, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [menData, setmenData] = useState([]);
+  const [Men, setMen] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
     if (category) {
-      const apiUrl = 'digaga-clads-url/${category}';
+      const apiUrl = 'digaga-clads-url/men/${category}';
       
       fetch(apiUrl)
         .then((response) => {
@@ -19,24 +18,21 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setmenData(data);
+          setMen(data);
         })
         .catch((error) => {
-          console.error('Error fetching men data:', error);
+          console.error('Error fetching Men data:', error);
         });
     }
   }, [category]);
 
   return (
-
+    
     <Router>
-      <div>
-        <Switch>
-          <Route path="/men/:category">
-            <men />
-          </Route>
-        </Switch>
-      </div>
+      <Routes>
+      <Route path="/men/:category" 
+      element={<Men />} />
+      </Routes>
     </Router>
   );
 }
