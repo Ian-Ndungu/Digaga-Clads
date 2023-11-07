@@ -4,8 +4,10 @@ import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
 import Contact from './contact';
-import './App.css';
+import About from './about';
 import Footer from './footer';
+import './App.css';
+
 function App() {
   return (
     <Router>
@@ -13,9 +15,9 @@ function App() {
         <Navbar /> {/* This component can remain outside the router */}
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} 
           <Route path="/contact" element={<Contact />} />
-          {/* You can define other routes here as needed */}
+          <Route path="/about" element={<About/>}/>
         </Routes>
         <Footer/>
       </div>
