@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Kids from './kids';
+import Men from './men';
 
 function App() {
 
-  const [kidsData, setKidsData] = useState([]);
+  const [menData, setmenData] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
     if (category) {
-      const apiUrl = `digaga-clads-url/${category}`;
+      const apiUrl = 'digaga-clads-url/${category}';
       
       fetch(apiUrl)
         .then((response) => {
@@ -19,10 +19,10 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setKidsData(data);
+          setmenData(data);
         })
         .catch((error) => {
-          console.error('Error fetching kids data:', error);
+          console.error('Error fetching men data:', error);
         });
     }
   }, [category]);
@@ -32,8 +32,8 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/kids/:category">
-            <Kids kidsData={kidsData} />
+          <Route path="/men/:category">
+            <men />
           </Route>
         </Switch>
       </div>

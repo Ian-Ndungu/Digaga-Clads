@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import  './men.css'
-import menData from './menData'
 
-
-const Men = ({menData}) => 
+const Men = () => 
 {
-  const { category } = useParams();
+  useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const filteredData = menData.filter((item) => {
+  const filteredData = Men.filter((item) => {
   (selectedCategory === 'All' || item.name === selectedCategory).map(
-    (item) => item.details)
+  (item) => item.details)
   .flat();
   });
-  //All is to reset the selection to default for the user.
+
+  //flat 'compresses' the nested arrays to a single array
+  // for the needed data. 
 
   const fetchData = async () => {
     try {
-      const response = await fetch('Digaga-clads-url');
+      const response = await fetch('digaga-clads-url');
       if (!response.ok) {
         throw new Error('Network error!');
       }
       const data = await response.json();
-      setKidsData(data);
+      setmen(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -34,23 +34,23 @@ const Men = ({menData}) =>
 
   useEffect(() => {
     // selectedCategory filter
-    const newFilteredData = kidsData.filter((item) => {
+    const newFilteredData = Men.filter((item) => {
       return selectedCategory === 'All' || item.name === selectedCategory;
     });
     setFilteredData(newFilteredData);
-  }, [selectedCategory, kidsData]);
-  // API fetch function.
+  }, [selectedCategory]);
+    // API fetch function.
 
   return (
     <div>
-    <h1>Men Products</h1>
+    <h1>Men's Products</h1>
     <div>
       <h2>Categories:</h2>
       <ul>
         <li>
           <button onClick={() => setSelectedCategory('All')}>All</button>
         </li>
-        {menData.map((item) => (
+        {Men.map((item) => (
           <li key={item.id}>
             <button onClick={() => setSelectedCategory(item.name)}>
               {item.name}
