@@ -18,8 +18,6 @@ const ShoppingCart = () => {
       quantity: 1,
       image: '',
     },
-    { id: 1, name: 'Product 1', price: 10.00, quantity: 0, image: 'product1.jpg' },
-    { id: 2, name: 'Product 2', price: 15.00, quantity: 0, image: 'product2.jpg' }
   ]);
 
   const [totalSum, setTotalSum] = useState(
