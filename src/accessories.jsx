@@ -35,7 +35,7 @@ function FashionAccessories() {
   }
 
   return (
-    <div>
+    <div className='access'>
       <h1>Fashion Accessories</h1>
       <label htmlFor="typeFilter">Filter by Type:</label>
       <select id="typeFilter" onChange={handleFilterChange} value={selectedType}>

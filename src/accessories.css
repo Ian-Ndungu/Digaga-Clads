@@ -1,40 +1,58 @@
+.access {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100vh;
+  margin-top: 6px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+#typeFilter {
+  font-size: 1em;
+  padding: 5px;
+  margin: 10px 0;
+}
+
 .accessory-cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .accessory-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-    max-width: 300px;
-    background-color: #fff;
-    transition: transform 0.2s;
-  }
-  
-  .accessory-card.active {
-    border: 2px solid #007bff;
-    transform: scale(1.05);
-  }
-  
-  .accessory-card h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .accessory-card p {
-    font-size: 1em;
-    margin-bottom: 5px;
-  }
-  
-  .accessory-card p.price {
-    font-weight: bold;
-    color: #00ff55;
-  }
-  
-  .label-container {
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accessory-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.accessory-card.active {
+  border-color: #ff5733; /* Change border color for active items */
+}
+
+.accessory-card:hover {
+  border-color: #ff5733; /* Change border color on hover */
+}
+
+.accessory-card h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.accessory-card p {
+  font-size: 1em;
+  margin: 0;
+}
+
+.accessory-card p.price {
+  font-weight: bold;
+}
