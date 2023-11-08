@@ -1,13 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
+import './payment.css';
 
 function Payment({ cartItems }) {
-  const [order, setOrder] = useState({ items: [], total: 0 }); 
+  const [order, setOrder] = useState({ items: [], total: 0 });
   const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
     if (cartItems && cartItems.length > 0) {
-      const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
       setOrder({ items: cartItems, total });
     }
   }, [cartItems]);
@@ -15,27 +15,26 @@ function Payment({ cartItems }) {
   const handlePayment = () => {
     setIsProcessing(true);
 
-  
     setTimeout(() => {
       setIsProcessing(false);
-      alert('Payment successful!'); 
+      alert('Payment successful!');
     }, 2000);
-  }
+  };
 
   return (
-    <div>
+    <div className="payment-container">
       <h2>Checkout</h2>
-      <button id="paymentButton" onClick={handlePayment} disabled={isProcessing}>
+      <button
+        className="payment-button"
+        id="paymentButton"
+        onClick={handlePayment}
+        disabled={isProcessing}
+      >
         {isProcessing ? 'Processing...' : 'Make Payment'}
       </button>
       {order.items.length > 0 && (
-        <div>
-          <h3>Order Details</h3>
-          <ul>
-            {order.items.map((item) => (
-              <li key={item.id}>{item.name} - ${item.price} x {item.quantity}</li>
-            ))}
-          </ul>
+        <div className="order-details">
+          <h3>Total Order</h3>
           <p>Total: ${order.total.toFixed(2)}</p>
         </div>
       )}

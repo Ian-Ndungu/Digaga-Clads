@@ -1,9 +1,8 @@
 .contact-container {
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 10%;
+    height: 100vh;
+    margin-top: 6%;
     background-color: #3CA39C;
     padding: 10px;
   }

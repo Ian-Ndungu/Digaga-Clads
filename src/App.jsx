@@ -10,9 +10,10 @@ import Footer from './footer';
 import './App.css';
 
 function App() {
+  
   return (
     <Router>
-      <div>
+      <div className='body'>
         <Navbar /> {/* This component can remain outside the router */}
         <Routes>
           <Route path="/" element={<Homepage />} />

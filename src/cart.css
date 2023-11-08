@@ -1,11 +1,8 @@
-
-
 .shopping-cart {
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 6%;
   padding: 20px;
-  background-color: #d4b518;
+  background-color: #18c7d4;
+  height: 100vh;
 }
 
 .shopping-cart-title {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarker } from 'react-icons/fa';
+import Footer from './footer';
 import './contact.css';
 
 function Contact() {

@@ -27,14 +27,7 @@ function about() {
                 </div>
             </div>
         </div>
-        <div className='footer'>
-        <footer>
-          <FaTwitter className="twitter-icon" />
-          <FaInstagram className="instagram-icon" />
-          <FaComments className="threads-icon" />
-          <p>&copy; 2019 Copyright by Digaga</p>
-        </footer>
-      </div>
+      
     </div>
   );
 }
