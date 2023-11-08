@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     if (category) {
-      const apiUrl = 'digaga-clads-url/kids/${category}';
+      const apiUrl = 'http://localhost:5173/kids';
       
       fetch(apiUrl)
         .then((response) => {
