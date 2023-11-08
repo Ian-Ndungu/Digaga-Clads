@@ -1,6 +1,8 @@
 .access {
+  background-image: url('../images to use/Accessories/accessory2.jpg');
+  background-size: cover;
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   height: 100vh;
