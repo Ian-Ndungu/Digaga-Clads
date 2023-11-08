@@ -1,77 +1,147 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import  './kids.css'
+import './men.css';
+import menData from './menData';
 
-const Kids = () => 
+const Men = () => 
 {
-  useParams();
+  const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const filteredData = Kids.filter((item) => {
-  (selectedCategory === 'All' || item.name === selectedCategory).map(
-  (item) => item.details)
-  .flat();
-  });
-
-  //flat 'compresses' the nested arrays to a single array
-  // for the needed data. 
+  const [selectedName, setSelectedName] = useState('All');
+  const [filteredData, setFilteredData] = useState([]);
+  const [men, setmen] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch('digaga-clads-url');
+      const response = await fetch(`http://localhost:5173/men/menData`);
       if (!response.ok) {
-        throw new Error('Network error!');
+        throw new Error('Network response was not ok');
       }
-      const data = await response.json();
-      setKids(data);
+      const jsonData = await response.json();
+      setmen(jsonData);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
+      const jsonData = await response.json();
+      setFilteredData(jsonData);
   };
+
 
   useEffect(() => {
     fetchData();
-  }, []); //Empty to feetch on completion.
+  }, [category]);
 
-  useEffect(() => {
-    // selectedCategory filter
-    const newFilteredData = Kids.filter((item) => {
-      return selectedCategory === 'All' || item.name === selectedCategory;
-    });
-    setFilteredData(newFilteredData);
-  }, [selectedCategory]);
-    // API fetch function.
+  const filterByColor = (color) => {
+    const filtered = men.filter((item) => item.details.some((detail) => detail.color === color));
+    setFilteredData(filtered);
+  };
+
+  const filterBySize = (size) => {
+    const filtered = men.filter((item) => item.details.some((detail) => detail.size === size));
+    setFilteredData(filtered);
+  };
+
+  const getUniqueName= (data) => {
+    const name= data.map((item) => item.name);
+    return [...new Set(name)];
+  };
+  //Populate by selected product
+
+  const getUniqueCategory= (data) => {
+    const category= data.map((item) => item.category);
+    return [...new Set(category)];
+  };
+  //populate by selected ctaegory
+
+    //to get data from the menData.
+
+
+  //-------- SETUP OF FUNCTIONS, DEPENDENCIES AND NECESSARY STATEMENTS ----------//------------//
+  let content = null;
+
+  if (selectedName === 'All') {
+    content = (
+      <div>
+        <h3>Clothing for {selectedName}</h3>
+        {filteredData.map((item) => (
+          <div key={item.id}>
+            <h4>{item.title}</h4>
+            <p>Color: {item.color}</p>
+            <p>Size: {item.size}</p>
+          </div>
+        ))}
+      </div>
+    );
+  } else {
+    content = <div>null</div>;
+  }
 
   return (
-    <div>
-    <h1>Kid's Products</h1>
-    <div>
-      <h2>Categories:</h2>
-      <ul>
-        <li>
-          <button onClick={() => setSelectedCategory('All')}>All</button>
-        </li>
-        {Kids.map((item) => (
-          <li key={item.id}>
-            <button onClick={() => setSelectedCategory(item.name)}>
-              {item.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      <h2>Filter by: {selectedCategory}</h2>
-      {filteredData.map((item) => (
-        <div key={item.id}>
-          <h3>{item.title}</h3>
-          <p>Color: {item.color}</p>
-          <p>Size: {item.size}</p>
-        </div>
+    <div className='landing-page'>
+      <h1>men's Products</h1>
+      <div>
+      <h2>Filter by: {selectedName}</h2> 
+      <select
+      value={selectedName}
+      onChange={(e) => setSelectedName(e.target.value)}
+    >
+      <option value="All">All Categories</option>
+      {getUniqueName(menData).map((name) => (
+        <option key={name} value={name}>
+          {name}
+        </option>
       ))}
+    </select>
+
+  {filteredData
+    .filter((item) => item.name === selectedName)
+    .map((item) => (
+      <div key={item.id}>
+        <h4>{item.title}</h4>
+        <p>Color: {item.color}</p>
+        <p>Size: {item.size}</p>
+      </div>
+    ))}
+
+      <input
+        type="text"
+        placeholder="Show products.."
+        value={filteredData}
+        onChange={(e) => filteredData(e.target.value)}
+      />
+
+      {filteredData
+        .filter(
+          (item) =>
+            item.name === selectedCategory &&
+            (filteredData === '' ||
+              item.title.toLowerCase().includes(filteredData.toLowerCase()))
+        )
+        .map((item) => (
+          <div key={item.id}>
+            <h4>{item.title}</h4>
+            <p>Color: {item.color}</p>
+            <p>Size: {item.size}</p>
+          </div>
+        ))}
     </div>
-  </div>
-);
-};
 
 
-export default Kids;
+        <div className='landing-page'>
+          <h3>Filter by Product:</h3>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="All">All</option>
+            {getUniqueCategory(menData).map((details) => (
+              <option key={details} value={details}>
+                {details}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+  );
+            }
+export default Men;
