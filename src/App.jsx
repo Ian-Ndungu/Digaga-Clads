@@ -29,11 +29,11 @@ function App() {
   return (
     
     <Router>
-      <Routes>
-      <Route path="/kids/:category" 
-      element={<Kids />} />
-      </Routes>
+    <Routes>
+    <Route path="/kids/:category" element={<Kids />} />
+    </Routes>
     </Router>
+
   );
 }
 

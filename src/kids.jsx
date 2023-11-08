@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './men.css';
-import menData from './menData';
+import './kids.css';
+import kidsData from './kidsData';
 
-const Men = () => 
+const Kids = () => 
 {
   const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedName, setSelectedName] = useState('All');
   const [filteredData, setFilteredData] = useState([]);
-  const [men, setmen] = useState([]);
+  const [Kids, setKids] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5173/men/menData`);
+      const response = await fetch(`http://localhost:5173/kids`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const jsonData = await response.json();
-      setmen(jsonData);
+      setkids(jsonData);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -32,12 +32,12 @@ const Men = () =>
   }, [category]);
 
   const filterByColor = (color) => {
-    const filtered = men.filter((item) => item.details.some((detail) => detail.color === color));
+    const filtered = Kids.filter((item) => item.details.some((detail) => detail.color === color));
     setFilteredData(filtered);
   };
 
   const filterBySize = (size) => {
-    const filtered = men.filter((item) => item.details.some((detail) => detail.size === size));
+    const filtered = Kids.filter((item) => item.details.some((detail) => detail.size === size));
     setFilteredData(filtered);
   };
 
@@ -53,7 +53,7 @@ const Men = () =>
   };
   //populate by selected ctaegory
 
-    //to get data from the menData.
+    //to get data from the kidsData.
 
 
   //-------- SETUP OF FUNCTIONS, DEPENDENCIES AND NECESSARY STATEMENTS ----------//------------//
@@ -78,7 +78,7 @@ const Men = () =>
 
   return (
     <div className='landing-page'>
-      <h1>men's Products</h1>
+      <h1>Kids's Products</h1>
       <div>
       <h2>Filter by: {selectedName}</h2> 
       <select
@@ -86,7 +86,7 @@ const Men = () =>
       onChange={(e) => setSelectedName(e.target.value)}
     >
       <option value="All">All Categories</option>
-      {getUniqueName(menData).map((name) => (
+      {getUniqueName(kidsData).map((name) => (
         <option key={name} value={name}>
           {name}
         </option>
@@ -134,7 +134,7 @@ const Men = () =>
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
             <option value="All">All</option>
-            {getUniqueCategory(menData).map((details) => (
+            {getUniqueCategory(kidsData).map((details) => (
               <option key={details} value={details}>
                 {details}
               </option>
@@ -144,4 +144,4 @@ const Men = () =>
       </div>
   );
             }
-export default Men;
+export default Kids;

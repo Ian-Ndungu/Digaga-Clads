@@ -1,4 +1,4 @@
-const menData = [
+const kidsData = [
     {
       id: 1,
       name: 'Official',
@@ -21,7 +21,7 @@ const menData = [
     {
       id: 2,
       name: 'Casual',
-      category: ' Pants', //both genders
+      category: ' Pants', 
       details: [
         { id: 7, color: 'Black', size: 'M',title: ' - Size M' },
   
@@ -78,5 +78,5 @@ const menData = [
     },
   ];
   
-  export default menData
+  export default kidsData
     //test data to see functionality
