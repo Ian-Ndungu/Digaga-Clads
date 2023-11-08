@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { FaShoppingBag } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'
 import './navbar.css';
 
 
@@ -11,14 +12,19 @@ const Navbar = () => {
     dropdownMenu.classList.toggle('show');
   };
 
+  let navigate = useNavigate();
+  const handlebackhome = () => {
+    let path = '/';
+    navigate(path);
+  }
   return (
     
 
     <div id="dashboard">
     <nav className="navbar">
-      <div className="navbar-left">
+    <div className="navbar-left" onClick={handlebackhome}>
         <h1>
-          <span className="brand">DIGAGA</span> 
+          <span className="brand">DIGAGA</span>
           <span className="spacer"></span>
           <span className="style1">CLADS</span>
         </h1>
@@ -27,7 +33,6 @@ const Navbar = () => {
       <FaBars className="menu-icon" onClick={handleDropdownClick} />
         <li className="dropdown" onClick={handleDropdownClick}>
           <ul id="dropdown-menu" className="dropdown-menu">
-            <li><Link to="/">Home</Link></li>
             <li><Link to="/men">Men</Link></li>
             <li><Link to="/women">Women</Link></li>
             <li><Link to="/kids">Kids</Link></li>

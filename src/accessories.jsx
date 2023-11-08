@@ -8,7 +8,7 @@ function FashionAccessories() {
 
   useEffect(() => {
     // Fetch 
-    fetch('')
+    fetch('https://digaga-clads.onrender.com/accessories')
       .then(response => response.json())
       .then(data => {
         setAccessories(data);
