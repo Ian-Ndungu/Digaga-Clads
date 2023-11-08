@@ -1,0 +1,97 @@
+/* Navbar container */
+#dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+}
+#dashboard :hover{
+  background-color: #fff;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #1f1f1f;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.brand {
+  font-weight: bold;
+  
+}
+
+.spacer {
+  margin: 0 10px;
+}
+
+.style1 {
+  color: red;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+  color: red;
+}
+
+.menu-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #000000;
+}
+
+/* Navbar dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  list-style: none;
+  background-color: #ffffff;
+  display: none;
+  border-radius: 4%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  min-width: 150px;
+}
+
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 10px 0;
+}
+
+.dropdown-menu a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Navbar shopping bag icon */
+.shopping-bag-icon {
+  font-size: 1.5em;
+}
