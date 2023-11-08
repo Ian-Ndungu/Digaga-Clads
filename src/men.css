@@ -1,3 +1,7 @@
+body{
+  color:black
+}
+
 .access {
     background-image: url('../images to use/men/mens background.jpg');
     background-size: cover;
@@ -24,4 +28,4 @@ flex-wrap: wrap;
   .all_men-cards :hover{
     background-color: #ffffff;
   }
-  
+    

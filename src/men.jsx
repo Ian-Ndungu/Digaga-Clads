@@ -5,6 +5,7 @@ function Men () {
   const [accessories, setAccessories] = useState([]);
   const [filteredAccessories, setFilteredAccessories] = useState([]);
   const [selectedType, setSelectedType] = useState('All');
+  const [lastDirectory, setLastDirectory] = useState('');
 
   useEffect(() => {
     // Fetch 
@@ -15,6 +16,13 @@ function Men () {
         setFilteredAccessories(data);
       })
       .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  useEffect(() => {
+    const currentURL = window.location.pathname;
+    const urlParts = currentURL.split('/');
+    const extractedLastDirectory = urlParts[urlParts.length - 1];
+    setLastDirectory(extractedLastDirectory);
   }, []);
 
   useEffect(() => {
@@ -59,6 +67,10 @@ function Men () {
           </div>
         ))}
       </div>
+      print(
+        <h1>Last Directory in the URL:</h1>
+         <p>{lastDirectory}</p>
+         )
     </div>
   );
 }
