@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, useParams, Routes } from 'react-router-
 
 function App() {
 
-  const [Men, setMen] = useState([]);
+  const [Kids, setKids] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
     if (category) {
-      const apiUrl = 'digaga-clads-url/men/${category}';
+      const apiUrl = 'digaga-clads-url/kids/${category}';
       
       fetch(apiUrl)
         .then((response) => {
@@ -18,10 +18,10 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setMen(data);
+          setKids(data);
         })
         .catch((error) => {
-          console.error('Error fetching Men data:', error);
+          console.error('Error fetching kids data:', error);
         });
     }
   }, [category]);
@@ -30,8 +30,8 @@ function App() {
     
     <Router>
       <Routes>
-      <Route path="/men/:category" 
-      element={<Men />} />
+      <Route path="/kids/:category" 
+      element={<Kids />} />
       </Routes>
     </Router>
   );
