@@ -12,20 +12,10 @@ import './App.css';
 function App() {
   
   return (
-    <Router>
-      <div className='body'>
-        <Navbar /> {/* This component can remain outside the router */}
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/about" element={<About/>}/>
-        </Routes>
-        <Footer/>
-      </div>
-    </Router>
-  );
+  <div>
+    < Homepage/>
+  </div>
+  )
 }
 
 export default App;
