@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function Men() {
   const [category, setCategory] = useState("men");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([""]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function Men() {
           </h3>
         </a>
         <img
-          src={product.images[0]}
+          src={product.images}
           width={200}
           height={200}
           alt={product.name}
@@ -68,7 +68,7 @@ function Men() {
         >
           <option value="men">Men</option>
           <option value="women">Women</option>
-          <option value="children">Children</option>
+          <option value="kids">Children</option>
         </select>
       </div>
       <div>{loading ? "Loading" : items.map(renderProduct)}</div>
