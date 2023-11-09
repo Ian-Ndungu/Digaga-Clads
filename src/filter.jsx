@@ -7,7 +7,7 @@ function Filter() {
 
   useEffect(() => {
 
-    const apiUrl = 'https://digaga-clads-main.onrender.com/kids';
+    const apiUrl = 'https://digaga-clads-main.onrender.com/men';
 
     fetch(apiUrl)
       .then((response) => {
