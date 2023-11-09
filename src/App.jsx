@@ -4,6 +4,7 @@ import Homepage from './homepage';
 import Cart from './cart';
 import Navbar from './navbar';
 import Contact from './contact';
+import Women from './women';
 import Accessories from './accessories';
 import About from './about';
 import Footer from './footer';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/accessories" element={<Accessories />} />
+          <Route path="/women" element={<Women />} />
           <Route path="/about" element={<About/>}/>
         </Routes>
         <Footer/>
