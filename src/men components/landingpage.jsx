@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import OfficialMen from './officialpage';
 import './men.css';
 
 function Men () {
@@ -9,7 +12,7 @@ function Men () {
 
   useEffect(() => {
     // Fetch 
-    fetch('https://digaga-clads.onrender.com/men')
+    fetch('https://digaga-clads-main.onrender.com/men/')
       .then(response => response.json())
       .then(data => {
         setAccessories(data);
@@ -41,36 +44,36 @@ function Men () {
   const handleClickCard = (type) => {
     setSelectedType(type);
   }
+  const handleCategory=(e) => {
+    e.preventDefault();
+    <Router>
+    <Route path='/official' element={<OfficialMen/>} />
+    </Router>
+
+  }
 
   return (
-    <div className='access'>
+       
+    <div className='men'>
       <h1 id='title'>Men</h1>
-      {/* <label htmlFor="typeFilter">Filter by Type:</label>
-      <select id="typeFilter" onChange={handleFilterChange} value={selectedType}>
-        <option value="All">All</option>
-        <option value="Necklace">Necklace</option>
-        <option value="Earrings">Earrings</option>
-        <option value="Bracelet">Bracelet</option>
-        <option value="Ring">Ring</option>
-      </select> */}
+   
       <div className="all_men-cards">
-        {accessories.map(all_men => (
-          <div
-            key={all_men.id}
-            className={`all_men-card ${all_men.type === selectedType ? 'active' : ''}`}
-            onClick={() => handleClickCard(all_men.type)}
-          >
-            <img src='{all_men.product_image}' />
-            <h2>{all_men.name}</h2>
-            <p>{all_men.description}</p>
-            <p>Price: ${all_men.unit_price}</p>
-          </div>
-        ))}
+        <div id='official-container' onClick={handleCategory}>
+          <img id="officialimg" src='images to use/men/tuxedo.jpg' alt="Tuxedo"/>
+          <h2>Official</h2>
+        </div>
+
+        <div id='casual-container' onClick={handleCategory}>
+          <img id="casualimg" src='images to use/men/mens_casua_wallpaperl.jpg' alt="mens_casua_wallpaperl"/>
+          <h2>Casual</h2>
+        </div>
+
+        <div id='smart_casual-container' onClick={handleCategory}>
+          <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
+          <h2>Smart Casual</h2>
+        </div>
       </div>
-      print(
-        <h1>Last Directory in the URL:</h1>
-         <p>{lastDirectory}</p>
-         )
+   
     </div>
   );
 }

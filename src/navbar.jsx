@@ -18,9 +18,7 @@ const Navbar = () => {
     navigate(path);
   }
   return (
-    
-
-    <div id="dashboard">
+  <div id="dashboard">
     <nav className="navbar">
     <div className="navbar-left" onClick={handlebackhome}>
         <h1>

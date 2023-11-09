@@ -4,9 +4,9 @@
   box-sizing: border-box;
   outline: none;
   border: none;
-  text-decoration: none;
+  /* text-decoration: none; */
   text-transform: capitalize;
-  transition: all .2s linear;
+  /* transition-duration: .2s; */
 }
 html{
   /* font-size: 62.5%; */
