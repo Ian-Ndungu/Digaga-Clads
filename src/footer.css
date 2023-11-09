@@ -1,0 +1,30 @@
+
+
+#footer {
+    /* padding: 20px; */
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  #footer :hover{
+    background-color: aliceblue;
+  }
+  
+  .footer p {
+    font-size: 14px;
+    color: black;
+    margin: 0;
+  }
+  
+  .twitter-icon,
+  .instagram-icon,
+  .threads-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: black;
+  }

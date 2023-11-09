@@ -1,0 +1,47 @@
+
+#About {
+    text-align: center;
+    padding-top:8%;
+    margin: 20px;
+    top: 10px;
+    background-color: #D9D9D9;
+    height: 100vh;
+  }
+  .heads{
+    color: #00C1FE;
+  }
+  .Our-Story {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  
+.CEO-Image {
+    max-width: 50%;
+    border-radius: 10px; 
+    margin-right: 20px;
+  }
+  
+  .Story-Text {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .Story-Text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .Story-Text p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .twitter-icon,
+  .instagram-icon,
+  .threads-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #000000;
+  }
