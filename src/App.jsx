@@ -8,6 +8,7 @@ import Accessories from './accessories';
 import About from './about';
 import Footer from './footer';
 import Men from './men components/landingpage';
+import View from './user-auth/View';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/about" element={<About/>}/>
         <Route path="/men" element={<Men/>}/>
+        <Route path="/view" element={<View/>} />
       </Routes>
       <Footer/>
     </div>
