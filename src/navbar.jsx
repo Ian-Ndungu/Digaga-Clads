@@ -18,9 +18,7 @@ const Navbar = () => {
     navigate(path);
   }
   return (
-    
-
-    <div id="dashboard">
+  <div id="dashboard">
     <nav className="navbar">
     <div className="navbar-left" onClick={handlebackhome}>
         <h1>
@@ -42,7 +40,7 @@ const Navbar = () => {
         
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/signup">SignUp</Link></li>
+        <li><Link to="/view">SignUp</Link></li>
         <li><Link to="/cart"><FaShoppingBag className="shopping-bag-icon" /></Link></li>
         
       </ul>

@@ -24,7 +24,7 @@ const View = () => {
         // Display a welcome message with the admin's name
         window.alert(`Welcome ${response.data.adminName}!`);
         // Redirect to the homepage
-        window.location.href = "/homepage";
+        window.location.href = "http://localhost:5173/";
       } else {
         // Handle admin login failure and display an error message
         setAdminLoggedIn(false);

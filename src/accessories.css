@@ -1,12 +1,14 @@
 .access {
   background-image: url('../images to use/Accessories/accessory2.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
   height: 100vh;
-  margin-top: 6px;
 }
 
 h1 {

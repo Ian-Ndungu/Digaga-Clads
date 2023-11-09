@@ -1,28 +1,37 @@
 /* Navbar container */
+navbar {
+  background-color: aqua;
+}
 #dashboard {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
+  
+  
   
 }
 #dashboard :hover{
   background-color: #fff;
-
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   color: #1f1f1f;
+  width: 100%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 18px;
 }
 
-.navbar h1 {
+/* .navbar h1 {
   font-size: 2rem;
   margin: 0;
-}
+} */
 
 .brand {
   font-weight: bold;
@@ -60,16 +69,17 @@
 
 .menu-icon {
   font-size: 1.5em;
-  cursor: pointer;
+  cursor:pointer;
   color: #000000;
 }
 
 /* Navbar dropdown menu */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 50%;
+  right:25%;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #ffffff2d;
   display: none;
   border-radius: 4%;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -84,6 +94,11 @@
 
 .dropdown-menu li {
   margin: 10px 0;
+}
+.dropdown li :hover{
+  font-size: larger;
+  background-color: aliceblue;
+  transition-delay: 1.5s linear;
 }
 
 .dropdown-menu a {

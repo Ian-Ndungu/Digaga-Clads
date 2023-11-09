@@ -16,7 +16,7 @@ const Register = ({ onRegistration }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/signup/", formData);
+      const response = await axios.post("https://digaga-clads-main.onrender.com/signup/", formData);
       console.log(response.data);
       // Switch to the login view after successful registration
       onRegistration();
