@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 import './official.css';
 
 
-function OfficialMen(){
+function MensPants(){
 
-    const [menofficial, setMenOffical] = useState([]);
-    const [filteredMenOfficial, setFilteredMenOfficial] = useState([]);
+    const [menspants, setMenOffical] = useState([]);
+    const [mensfilteredpants, menssetFilteredpants] = useState([]);
     const [selectedType, setSelectedType] = useState('All');
     const [lastDirectory, setLastDirectory] = useState('');
     
@@ -17,7 +17,7 @@ function OfficialMen(){
         .then(response => response.json())
         .then(data => {
             setMenOffical(data);
-            setFilteredMenOfficial(data);
+            menssetFilteredpants(data);
         })
         .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -31,12 +31,12 @@ function OfficialMen(){
 
     useEffect(() => {
         if (selectedType === 'All') {
-        setFilteredMenOfficial(menofficial);
+        menssetFilteredpants(menspants);
         } else {
-        const filtered = menofficial.filter(all_men => all_men.type === selectedType);
-        setFilteredMenOfficial(filtered);
+        const filtered = menspants.filter(all_men => all_men.type === selectedType);
+        menssetFilteredpants(filtered);
         }
-    }, [selectedType, menofficial]);
+    }, [selectedType, menspants]);
 
     const handleFilterChange = (e) => {
         setSelectedType(e.target.value);
@@ -55,29 +55,20 @@ function OfficialMen(){
     });
 };
     return (
-        // <div id="allOfficial-container">
-        //     <div className="suits">
-        //         <img id="officialimg" src="images to use/men/tuxedo.jpg" alt="tuxedo"/>
-        //         <button onClick={handleAddToCart}>Add to Cart</button>
-        //     </div>
-        // </div>
-
-        <div>
-        <div className="menofficial-cards">
-        {menofficial.map(menofficial => (
+        <div className="menspants-cards">
+        {menspants.map(menspants => (
           <div
-            key={menofficial.id}
-            className={`menofficial-card ${menofficial.type === selectedType ? 'active' : ''}`}
-            onClick={() => handleClickCard(menofficial.type)}
+            key={menspants.id}
+            className={`menspants-card ${menspants.type === selectedType ? 'active' : ''}`}
+            onClick={() => handleClickCard(menspants.type)}
           >
-            <img src={menofficial.product_image}/>
-            <h2>{menofficial.name}</h2>
-            <p>{menofficial.description}</p>
-            <p>Price: ${menofficial.unit_price}</p>
+            <img src={menspants.product_image}/>
+            <h2>{menspants.name}</h2>
+            <p>{menspants.description}</p>
+            <p>Price: ${menspants.unit_price}</p>
           </div>
         ))}
       </div>
-      </div>
     )
 }
-export default OfficialMen;
+export default MensPants;

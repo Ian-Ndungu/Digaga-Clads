@@ -1,6 +1,55 @@
-#official-container{
-    text-align: center;
-    padding: 20px;
+.officialmen{
+  background-image: url('../images to use/men/tuxedo.jpg');
+  background-size:cover;
+  /* background-repeat: no-repeat; */
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  /* margin: 0 auto; */
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
+  height: 100vh;
+}
+
+
+#suits-container{
+
+  text-align: center;
+  padding: 20px;
+  margin-left: 20px;
+  }
+
+  #suitsimg{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    margin-left: 20px;
+  }
+
+  #pants-container{
+    width:200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    margin-left: 20px;
+
+  }
+
+  #shirt-container{
+    width:200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    margin-left: 20px;
+
+  }
+
+  #shoes-container{
+    width:200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
     margin-left: 20px;
   }
 
@@ -9,4 +58,19 @@
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
+  }
+  #casualimg{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    object-fit: cover;
+  
+  }
+  #smart-casualimg{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    object-fit: cover;
   }

@@ -1,83 +1,50 @@
-import React from "react";
-import { useState, useEffect } from 'react';
-import './official.css';
+import React from 'react';
+import './official.css'
+import { useNavigate } from 'react-router-dom';
 
 
-function OfficialMen(){
+function Men () {
+  const navigate = useNavigate();
 
-    const [menofficial, setMenOffical] = useState([]);
-    const [filteredMenOfficial, setFilteredMenOfficial] = useState([]);
-    const [selectedType, setSelectedType] = useState('All');
-    const [lastDirectory, setLastDirectory] = useState('');
+  
+  const handleCategory=(path) => {
+    navigate(path)
     
 
-    useEffect(() => {
-        // Fetch 
-        fetch('https://digaga-clads.onrender.com/men/official')
-        .then(response => response.json())
-        .then(data => {
-            setMenOffical(data);
-            setFilteredMenOfficial(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-    }, []);
+  }
 
-    useEffect(() => {
-        const currentURL = window.location.pathname;
-        const urlParts = currentURL.split('/');
-        const extractedLastDirectory = urlParts[urlParts.length - 1];
-        setLastDirectory(extractedLastDirectory);
-    }, []);
+  return (
+       
+    <div className='officialmen'>
+      <h1 id='title'>Men</h1>
+        <video autoPlay muted loop className="video-element">
+          <source src={digagaVideo} type="video/mp4" />
+        </video>
+   
+      <div className="all_men-cards">
+        <div id='suits-container' onClick={() => handleCategory('/official')}>
+          <img id="officialimg" src='images to use/men/tuxedo.jpg' alt="Tuxedo"/>
+          <h2>Suits</h2>
+        </div>
+        
+        <div id='pants-container' onClick={() => handleCategory('/casual')}>
+          <img id="casualimg" src='images to use/men/mens_casua_wallpaperl.jpg' alt="mens_casua_wallpaperl"/>
+          <h2>Pants</h2>
+        </div>
 
-    useEffect(() => {
-        if (selectedType === 'All') {
-        setFilteredMenOfficial(menofficial);
-        } else {
-        const filtered = menofficial.filter(all_men => all_men.type === selectedType);
-        setFilteredMenOfficial(filtered);
-        }
-    }, [selectedType, menofficial]);
+        <div id='shirt-container' onClick={() => handleCategory('/smart-casual')}>
+          <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
+          <h2>Shirt</h2>
+        </div>
 
-    const handleFilterChange = (e) => {
-        setSelectedType(e.target.value);
-    }
-
-    const handleClickCard = (type) => {
-        setSelectedType(type);
-    }
-
-    const handleAddToCart = () => {
-        addToCart({
-            id: 3,  
-      name: 'Product 3',
-      price: 25.0, 
-      quantity: 1
-    });
-};
-    return (
-        // <div id="allOfficial-container">
-        //     <div className="suits">
-        //         <img id="officialimg" src="images to use/men/tuxedo.jpg" alt="tuxedo"/>
-        //         <button onClick={handleAddToCart}>Add to Cart</button>
-        //     </div>
-        // </div>
-
-        <div>
-        <div className="menofficial-cards">
-        {menofficial.map(menofficial => (
-          <div
-            key={menofficial.id}
-            className={`menofficial-card ${menofficial.type === selectedType ? 'active' : ''}`}
-            onClick={() => handleClickCard(menofficial.type)}
-          >
-            <img src={menofficial.product_image}/>
-            <h2>{menofficial.name}</h2>
-            <p>{menofficial.description}</p>
-            <p>Price: ${menofficial.unit_price}</p>
-          </div>
-        ))}
+        <div id='shoes-container' onClick={() => handleCategory('/smart-casual')}>
+          <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
+          <h2>Shoes</h2>
+        </div>
       </div>
-      </div>
-    )
+   
+    </div>
+  );
 }
-export default OfficialMen;
+
+export default Men;
