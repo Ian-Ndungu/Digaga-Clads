@@ -25,8 +25,8 @@ function Men () {
         </div>
         
         <div id='casual-container' onClick={() => handleCategory('/casual')}>
-          <img id="casualimg" src='images to use/men/mens_casua_wallpaperl.jpg' alt="mens_casua_wallpaperl"/>
-          <h2>Casual</h2>
+        <img src="https://images.pexels.com/photos/18972022/pexels-photo-18972022/free-photo-of-man-in-denim-jacket-and-jeans.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Man in Denim Jacket and Jeans"/>          
+        <h2>Casual</h2>
         </div>
 
         <div id='smart_casual-container' onClick={() => handleCategory('/smart-casual')}>
