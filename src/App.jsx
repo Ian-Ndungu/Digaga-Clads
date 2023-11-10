@@ -11,19 +11,6 @@ import Men from './men components/landingpage';
 import View from './user-auth/View';
 import './App.css';
 
-const express = require('express');
-const app = express();
-
-const port = process.env.PORT || 5173;
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
 function App() {
   
   return (
