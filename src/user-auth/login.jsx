@@ -44,7 +44,7 @@ const LoginForm = () => {
           required
         />
         <button type="submit">Login</button>
-      </form>
+      </form> 
     </div>
   );
 };

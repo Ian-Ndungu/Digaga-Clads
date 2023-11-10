@@ -1,0 +1,12 @@
+#official-container{
+    text-align: center;
+    padding: 20px;
+    margin-left: 20px;
+  }
+
+  #officialimg{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px solid;
+  }

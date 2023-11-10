@@ -41,6 +41,7 @@ flex-wrap: wrap;
   height: 250px;
   border-radius: 20px;
   border: 1.5px solid;
+  object-fit: cover;
 
 }
 #smart-casualimg{
@@ -48,6 +49,7 @@ flex-wrap: wrap;
   height: 250px;
   border-radius: 20px;
   border: 1.5px solid;
+  object-fit: cover;
 }
 #title{
   text-align: center;

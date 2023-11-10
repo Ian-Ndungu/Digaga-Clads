@@ -3,6 +3,16 @@ import './cart.css';
 import Payment from './payment';
 
 const ShoppingCart = () => {
+  const addToCart = (product) => {
+    const updatedCart = [...cart, product];  
+    setCart(updatedCart);
+    const newTotalSum = updatedCart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    setTotalSum(newTotalSum);
+  };
+
+
+
+
   const [cart, setCart] = useState([
     {
       id: 1,
@@ -96,7 +106,9 @@ const ShoppingCart = () => {
       {showPaymentAlert && (
         <div className="payment-alert">Payment successful!</div>
       )}
+      <OfficialMen addToCart={addToCart} />
       <Payment cartItems={cart} />
+      
     </div>
   );
 };
