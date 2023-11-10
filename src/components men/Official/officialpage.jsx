@@ -21,7 +21,7 @@ function MenOfficial () {
           <source src={digagaVideo} type="video/mp4" />
         </video> */}
    
-      <div className="all_men-cards">
+      <div className="all_officials-cards">
         <div id='suits-container' onClick={() => handleCategory('/official')}>
           <img id="officialimg" src='images to use/men/tuxedo.jpg' alt="Tuxedo"/>
           <h2>Suits</h2>
@@ -33,12 +33,12 @@ function MenOfficial () {
         </div>
 
         <div id='shirt-container' onClick={() => handleCategory('/smart-casual')}>
-          <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
+          <img id="smart-casualimg" src='images to use/men/shirt_men.jpg' alt="smart_casual-icon"/>
           <h2>Shirt</h2>
         </div>
 
         <div id='shoes-container' onClick={() => handleCategory('/smart-casual')}>
-          <img id="smart-casualimg" src='images to use/men/mens_shoes.jpg' alt="official_men_shoes.jpg"/>
+          <img id="smart-casualimg" src='images to use/men/shoes.jpg' alt="cabc5122775168105c44425361ca4ad3.jpg.jpg"/>
           <h2>Shoes</h2>
         </div>
       </div>

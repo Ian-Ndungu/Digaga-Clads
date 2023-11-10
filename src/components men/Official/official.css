@@ -13,8 +13,10 @@
 
 
 #suits-container{
-  text-align: center;
-  padding: 20px;
+  width:200px;
+  height: 250px;
+  border-radius: 20px;
+  border: 1.5px solid;
   margin-left: 20px;
   }
 
@@ -72,4 +74,9 @@
     border-radius: 20px;
     border: 1.5px solid;
     object-fit: cover;
+  }
+  .all_officials-cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10%;
   }
