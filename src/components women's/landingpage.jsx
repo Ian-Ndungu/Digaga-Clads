@@ -15,7 +15,7 @@ function Women() {
 
   return (
        
-    <div className='men'>
+    <div className='women'>
       <h1 id='title'>Women</h1>
    
       <div className="all_men-cards">

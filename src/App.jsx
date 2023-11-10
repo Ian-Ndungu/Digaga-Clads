@@ -15,6 +15,7 @@ import Casual from './components men/Casual/casual';
 import Women from './components women\'s/landingpage';
 import Kids from './components kid\'s/landingpage';
 import MensPants from './components men/Official/pants';
+import MenOfficial from './components men/Official/officialpage';
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
         <Route path='/women' element={<Women/>}/>
         <Route path='/kids' element={<Kids/>}/>
         <Route path='/pants' element={<MensPants/>}/>
+        <Route path='/official' element={<MenOfficial/>}/>
       </Routes>
       <Footer/>
     </div>

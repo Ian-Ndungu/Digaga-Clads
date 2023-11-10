@@ -1,0 +1,11 @@
+.women{
+    background-image: url('../images to use/women/I_am_woman.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    padding-top: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: 100vh;
+
+}

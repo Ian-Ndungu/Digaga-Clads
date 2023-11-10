@@ -3,7 +3,7 @@ import './official.css'
 import { useNavigate } from 'react-router-dom';
 
 
-function Men () {
+function MenOfficial () {
   const navigate = useNavigate();
 
   
@@ -15,7 +15,7 @@ function Men () {
 
   return (
        
-    <div className='officialmen'>
+    <div className='landing-official'>
       <h1 id='title'>Men</h1>
         <video autoPlay muted loop className="video-element">
           <source src={digagaVideo} type="video/mp4" />
@@ -47,4 +47,4 @@ function Men () {
   );
 }
 
-export default Men;
+export default MenOfficial;
