@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { login } from './auth';
+import { signup } from './auth';
 import axios from 'axios';
 
-const Login = ({ login, isAuthenticated }) => {
+const Signup = ({ signup, isAuthenticated }) => {
+    const [accountCreated, setAccountCreated] = useState(false);
     const [formData, setFormData] = useState({
+        first_name: '',
+        last_name: '',
         email: '',
-        password: '' 
+        password: '',
+        re_password: ''
     });
 
-    const { email, password } = formData;
+    const { first_name, last_name, email, password, re_password } = formData;
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = e => {
         e.preventDefault();
 
-        login(email, password);
+        if (password === re_password) {
+            signup(first_name, last_name, email, password, re_password);
+            setAccountCreated(true);
+        }
     };
 
     const continueWithGoogle = async () => {
@@ -43,17 +50,42 @@ const Login = ({ login, isAuthenticated }) => {
     if (isAuthenticated) {
         return <Redirect to='/' />
     }
+    if (accountCreated) {
+        return <Redirect to='/login' />
+    }
 
     return (
         <div className='container mt-5'>
-            <h1>Sign In</h1>
-            <p>Sign into your Account</p>
+            <h1>Sign Up</h1>
+            <p>Create your Account</p>
             <form onSubmit={e => onSubmit(e)}>
                 <div className='form-group'>
                     <input
                         className='form-control'
+                        type='text'
+                        placeholder='First Name*'
+                        name='first_name'
+                        value={first_name}
+                        onChange={e => onChange(e)}
+                        required
+                    />
+                </div>
+                <div className='form-group'>
+                    <input
+                        className='form-control'
+                        type='text'
+                        placeholder='Last Name*'
+                        name='last_name'
+                        value={last_name}
+                        onChange={e => onChange(e)}
+                        required
+                    />
+                </div>
+                <div className='form-group'>
+                    <input
+                        className='form-control'
                         type='email'
-                        placeholder='Email'
+                        placeholder='Email*'
                         name='email'
                         value={email}
                         onChange={e => onChange(e)}
@@ -64,7 +96,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <input
                         className='form-control'
                         type='password'
-                        placeholder='Password'
+                        placeholder='Password*'
                         name='password'
                         value={password}
                         onChange={e => onChange(e)}
@@ -72,7 +104,19 @@ const Login = ({ login, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <button className='btn btn-primary' type='submit'>Login</button>
+                <div className='form-group'>
+                    <input
+                        className='form-control'
+                        type='password'
+                        placeholder='Confirm Password*'
+                        name='re_password'
+                        value={re_password}
+                        onChange={e => onChange(e)}
+                        minLength='6'
+                        required
+                    />
+                </div>
+                <button className='btn btn-primary' type='submit'>Register</button>
             </form>
             <button className='btn btn-danger mt-3' onClick={continueWithGoogle}>
                 Continue With Google
@@ -82,10 +126,7 @@ const Login = ({ login, isAuthenticated }) => {
                 Continue With Facebook
             </button>
             <p className='mt-3'>
-                Don't have an account? <Link to='/signup'>Sign Up</Link>
-            </p>
-            <p className='mt-3'>
-                Forgot your Password? <Link to='/reset-password'>Reset Password</Link>
+                Already have an account? <Link to='/login'>Sign In</Link>
             </p>
         </div>
     );
@@ -95,4 +136,4 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(mapStateToProps, { signup })(Signup);
