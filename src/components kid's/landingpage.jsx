@@ -15,10 +15,10 @@ function Kids () {
 
   return (
        
-    <div className='men'>
+    <div className='kids'>
       <h1 id='title'>Kids</h1>
    
-      <div className="all_men-cards">
+      <div className="all-kids">
         <div id='official-container' onClick={() => handleCategory('/official')}>
           <img id="officialimg" src='images to use/men/tuxedo.jpg' alt="Tuxedo"/>
           <h2>Official</h2>

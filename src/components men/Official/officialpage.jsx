@@ -17,9 +17,9 @@ function MenOfficial () {
        
     <div className='landing-official'>
       <h1 id='title'>Men</h1>
-        <video autoPlay muted loop className="video-element">
+        {/* <video autoPlay muted loop className="video-element">
           <source src={digagaVideo} type="video/mp4" />
-        </video>
+        </video> */}
    
       <div className="all_men-cards">
         <div id='suits-container' onClick={() => handleCategory('/official')}>
@@ -38,7 +38,7 @@ function MenOfficial () {
         </div>
 
         <div id='shoes-container' onClick={() => handleCategory('/smart-casual')}>
-          <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
+          <img id="smart-casualimg" src='images to use/men/mens_shoes.jpg' alt="official_men_shoes.jpg"/>
           <h2>Shoes</h2>
         </div>
       </div>
