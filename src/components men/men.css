@@ -40,7 +40,7 @@ flex-wrap: wrap;
   width: 200px;
   height: 250px;
   border-radius: 20px;
-  border: 1.5px solid;
+  /* border: 1.5px solid; */
   object-fit: cover;
 
 }

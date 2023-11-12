@@ -25,7 +25,7 @@ function Men () {
         </div>
         
         <div id='casual-container' onClick={() => handleCategory('/casual')}>
-        <img src="https://images.pexels.com/photos/18972022/pexels-photo-18972022/free-photo-of-man-in-denim-jacket-and-jeans.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Man in Denim Jacket and Jeans"/>          
+        <img id='casualimg' src="https://images.pexels.com/photos/6311687/pexels-photo-6311687.jpeg" alt="Man in Denim Jacket and Jeans"/>          
         <h2>Casual</h2>
         </div>
 
