@@ -19,7 +19,7 @@ function Men () {
       <h1 id='title'>Men</h1>
    
       <div className="all_men-cards">
-        <div id='official-container' onClick={() => handleCategory('/official')}>
+        <div id='official-container' onClick={() => handleCategory('/men/official')}>
           <img id="officialimg" src='images to use/men/tuxedo.jpg' alt="Tuxedo"/>
           <h2>Official</h2>
         </div>

@@ -11,12 +11,16 @@ import Men from './components men/landingpage';
 // import View from './user-auth/View';
 import './App.css';
 import OfficialMen from './components men/Official/officialpage';
-import Casual from './components men/Casual/casual';
+import MenCasual from './components men/Casual/casual';
 import Women from './components women\'s/landingpage';
 import Kids from './components kid\'s/landingpage';
 import MensPants from './components men/Official/pants';
 import MenOfficial from './components men/Official/officialpage';
-
+import OfficialSuits from './components men/Official/suits';
+import CasualHoodies from './components men/Casual/hoodies';
+import CasualT_Shirts from './components men/Casual/t-shirts';
+import CasualSweatPants from './components men/Casual/sweatpants';
+import CasualShoes from './components men/Casual/shoes';
 function App() {
   
   return (
@@ -32,11 +36,16 @@ function App() {
         <Route path="/men" element={<Men/>}/>
         {/* <Route path="/view" element={<View/>} /> */}
         <Route path="/officialpage" element={<OfficialMen/>} />
-        <Route path='/casual' element={<Casual/>}/>
+        <Route path='/casual' element={<MenCasual/>}/>
+        <Route path='/men/casual/hoodies' element={<CasualHoodies/>}/>
+        <Route path='/men/casual/t-shirts' element={<CasualT_Shirts/>}/>
+        <Route path='/men/casual/sweatpants' element={<CasualSweatPants/>}/>
+        <Route path='/men/casual/shoes' element={<CasualShoes/>}/>        
         <Route path='/women' element={<Women/>}/>
         <Route path='/kids' element={<Kids/>}/>
         <Route path='/pants' element={<MensPants/>}/>
-        <Route path='/official' element={<MenOfficial/>}/>
+        <Route path='/men/official' element={<MenOfficial/>}/>
+        <Route path='/men/official/suits' element={<OfficialSuits/>}/>
       </Routes>
       <Footer/>
     </div>

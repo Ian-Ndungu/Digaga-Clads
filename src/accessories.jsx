@@ -8,7 +8,7 @@ function FashionAccessories() {
 
   useEffect(() => {
     // Fetch 
-    fetch('https://digaga-clads.onrender.com/accessories')
+    fetch('https://digaga-clads-main.onrender.com/accessories')
       .then(response => response.json())
       .then(data => {
         setAccessories(data);
@@ -37,14 +37,14 @@ function FashionAccessories() {
   return (
     <div className='access'>
       <h1>Fashion Accessories</h1>
-      <label htmlFor="typeFilter">Filter by Type:</label>
+      {/* <label htmlFor="typeFilter">Filter by Type:</label>
       <select id="typeFilter" onChange={handleFilterChange} value={selectedType}>
         <option value="All">All</option>
         <option value="Necklace">Necklace</option>
         <option value="Earrings">Earrings</option>
         <option value="Bracelet">Bracelet</option>
         <option value="Ring">Ring</option>
-      </select>
+      </select> */}
       <div className="accessory-cards">
         {accessories.map(accessory => (
           <div
@@ -54,7 +54,7 @@ function FashionAccessories() {
           >
             <h2>{accessory.name}</h2>
             <p>{accessory.description}</p>
-            <p>Price: ${accessory.price}</p>
+            <p>Price: KES {accessory.unit_price}/=</p>
           </div>
         ))}
       </div>

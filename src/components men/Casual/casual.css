@@ -1,0 +1,89 @@
+.landing-casual{
+    background-image: url('../images to use/men/tuxedo.jpg');
+    background-size:cover;
+    /* background-repeat: no-repeat; */
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    /* margin: 0 auto; */
+    padding-top: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: 100vh;
+  }
+  .all_casual-cards h2{
+    color: white;
+  }
+  .all_casual-cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10%;
+    text-align: center;
+    /* color: white; */
+}
+  
+  #hoodies-container{
+    width:200px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1.5px black;
+    margin-left: -80px;
+    }
+  
+    
+  
+    #t-shirts-container{
+      width:200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      margin-left: 200px;
+  
+    }
+  
+    #sweats-container{
+      width:200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      margin-left: 200px;
+  
+    }
+  
+    #shoes-container{
+      width:200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      margin-left: 200px;
+    }
+
+    #hoodieimg{
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        border: 1.5px solid;
+      }
+    #t-shirtimg{
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      object-fit: cover;
+    }
+    #sweatsimg{
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      object-fit: cover;
+    
+    }
+    #shoeimg{
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+      object-fit: cover;
+    }
+
+  

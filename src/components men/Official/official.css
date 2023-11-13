@@ -10,30 +10,36 @@
   padding-right: 15%;
   height: 100vh;
 }
-
+/* .all_cassua-cards h2{
+  color: white;
+} */
+.all_officials-cards{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10%;
+  text-align: center;
+  /* color: white; */
+}
+.all_officials-cards h2{
+  color: white;
+}
 
 #suits-container{
   width:200px;
   height: 250px;
   border-radius: 20px;
-  border: 1.5px solid;
-  margin-left: 20px;
+  border: 1.5px black;
+  margin-left: -80px;
   }
 
-  #suitsimg{
-    width: 200px;
-    height: 250px;
-    border-radius: 20px;
-    border: 1.5px solid;
-    margin-left: 20px;
-  }
+  
 
   #pants-container{
     width:200px;
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
-    margin-left: 20px;
+    margin-left: 200px;
 
   }
 
@@ -42,7 +48,7 @@
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
-    margin-left: 20px;
+    margin-left: 200px;
 
   }
 
@@ -51,16 +57,23 @@
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
-    margin-left: 20px;
+    margin-left: 200px;
   }
 
-  #officialimg{
+  #suitsimg{
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1.5px solid;
+    }
+  #pantsimg{
     width: 200px;
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
+    object-fit: cover;
   }
-  #casualimg{
+  #shirtsimg{
     width: 200px;
     height: 250px;
     border-radius: 20px;
@@ -68,15 +81,11 @@
     object-fit: cover;
   
   }
-  #smart-casualimg{
+  #shoesimg{
     width: 200px;
     height: 250px;
     border-radius: 20px;
     border: 1.5px solid;
     object-fit: cover;
   }
-  .all_officials-cards{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10%;
-  }
+

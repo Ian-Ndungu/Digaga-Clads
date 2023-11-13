@@ -3,9 +3,9 @@ body{
 }
 
 .men {
-    background-image: url('../images to use/men/mens background.jpg');
+    background-image: url("https://images.pexels.com/photos/9558602/pexels-photo-9558602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg");
     background-size:cover;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     max-width: 100%;
     /* margin: 0 auto; */

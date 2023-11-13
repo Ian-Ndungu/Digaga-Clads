@@ -1,23 +1,23 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import './official.css';
+// import './official.css';
 
 
-function OfficialSuits(){
+function CasualT_Shirts(){
 
-    const [mensuits, serMenSuits] = useState([]);
-    const [filteredMenOfficial, setFilteredMenSuits] = useState([]);
+    const [menst_shirt, setMenst_shirt] = useState([]);
+    const [filteredMenst_shirt, setFilteredMenst_shirt] = useState([]);
     const [selectedType, setSelectedType] = useState('All');
     const [lastDirectory, setLastDirectory] = useState('');
     
 
     useEffect(() => {
         // Fetch 
-        fetch('https://digaga-clads-main.onrender.com/men/suits')
+        fetch('https://digaga-clads-main.onrender.com/men/hoodies')
         .then(response => response.json())
         .then(data => {
-            serMenSuits(data);
-            setFilteredMenSuits(data);
+            setMenst_shirt(data);
+            setFilteredMenst_shirt(data);
         })
         .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -31,12 +31,12 @@ function OfficialSuits(){
 
     useEffect(() => {
         if (selectedType === 'All') {
-        setFilteredMenSuits(mensuits);
+        setFilteredMenst_shirt(menst_shirt);
         } else {
-        const filtered = mensuits.filter(all_men => all_men.type === selectedType);
-        setFilteredMenSuits(filtered);
+        const filtered = menst_shirt.filter(all_men => all_men.type === selectedType);
+        setFilteredMenst_shirt(filtered);
         }
-    }, [selectedType, mensuits]);
+    }, [selectedType, menst_shirt]);
 
     const handleFilterChange = (e) => {
         setSelectedType(e.target.value);
@@ -63,21 +63,21 @@ function OfficialSuits(){
         // </div>
 
         <div>
-        <div className="mensuits-cards">
-        {mensuits.map(mensuits => (
+        <div className="menst_shirt-cards">
+        {menst_shirt.map(menst_shirt => (
           <div
-            key={mensuits.id}
-            className={`mensuits-card ${mensuits.type === selectedType ? 'active' : ''}`}
-            onClick={() => handleClickCard(mensuits.type)}
+            key={menst_shirt.id}
+            className={`menst_shirt-card ${menst_shirt.type === selectedType ? 'active' : ''}`}
+            onClick={() => handleClickCard(menst_shirt.type)}
           >
-            <img src={mensuits.product_image}/>
-            <h2>{mensuits.name}</h2>
-            <p>{mensuits.description}</p>
-            <p>Price: ${mensuits.unit_price}</p>
+            <img src={menst_shirt.product_image}/>
+            <h2>{menst_shirt.name}</h2>
+            <p>{menst_shirt.description}</p>
+            <p>Price: KES {menst_shirt.unit_price}/=</p>
           </div>
         ))}
       </div>
       </div>
     )
 }
-export default OfficialSuits;
+export default CasualT_Shirts;
