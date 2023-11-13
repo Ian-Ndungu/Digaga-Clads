@@ -24,12 +24,12 @@ function Men () {
           <h2>Official</h2>
         </div>
         
-        <div id='casual-container' onClick={() => handleCategory('/casual')}>
+        <div id='casual-container' onClick={() => handleCategory('/men/casual')}>
         <img id='casualimg' src="https://images.pexels.com/photos/6311687/pexels-photo-6311687.jpeg" alt="Man in Denim Jacket and Jeans"/>          
         <h2>Casual</h2>
         </div>
 
-        <div id='smart_casual-container' onClick={() => handleCategory('/smart-casual')}>
+        <div id='smart_casual-container' onClick={() => handleCategory('/men/smartcasual')}>
           <img id="smart-casualimg" src='images to use/men/smart_casual- icon.jpg' alt="smart_casual-icon"/>
           <h2>Smart Casual</h2>
         </div>

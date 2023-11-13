@@ -28,17 +28,17 @@ function MenCasual () {
         </div>
         
         <div id='t-shirts-container' onClick={() => handleCategory('/men/casual/t-shirts')}>
-          <img id="t-shirtimg" src='images to use/men/mens_casua_wallpaperl.jpg' alt="mens_casua_wallpaperl"/>
+          <img id="t-shirtimg" src='../images to use/men/mens_casua_wallpaperl.jpg' alt="mens_casua_wallpaperl"/>
           <h2>T-shirts</h2>
         </div>
 
         <div id='sweats-container' onClick={() => handleCategory('/men/casual/sweatpants')}>
-          <img id="sweatsimg" src='images to use/men/shirt_men.jpg' alt="smart_casual-icon"/>
+          <img id="sweatsimg" src='../images to use/men/shirt_men.jpg' alt="smart_casual-icon"/>
           <h2>Sweat Pants</h2>
         </div>
 
         <div id='shoes-container' onClick={() => handleCategory('/men/casual/shoes/')}>
-          <img id="shoeimg" src='images to use/men/shoes.jpg' alt="cabc5122775168105c44425361ca4ad3.jpg.jpg"/>
+          <img id="shoeimg" src='../images to use/men/shoes.jpg' alt="cabc5122775168105c44425361ca4ad3.jpg.jpg"/>
           <h2>Shoes</h2>
         </div>
       </div>

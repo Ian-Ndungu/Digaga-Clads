@@ -21,6 +21,7 @@ import CasualHoodies from './components men/Casual/hoodies';
 import CasualT_Shirts from './components men/Casual/t-shirts';
 import CasualSweatPants from './components men/Casual/sweatpants';
 import CasualShoes from './components men/Casual/shoes';
+import MenSmart_Casual from './components men/Smart Casual/smartcasual';
 function App() {
   
   return (
@@ -36,7 +37,7 @@ function App() {
         <Route path="/men" element={<Men/>}/>
         {/* <Route path="/view" element={<View/>} /> */}
         <Route path="/officialpage" element={<OfficialMen/>} />
-        <Route path='/casual' element={<MenCasual/>}/>
+        <Route path='/men/casual' element={<MenCasual/>}/>
         <Route path='/men/casual/hoodies' element={<CasualHoodies/>}/>
         <Route path='/men/casual/t-shirts' element={<CasualT_Shirts/>}/>
         <Route path='/men/casual/sweatpants' element={<CasualSweatPants/>}/>
@@ -46,6 +47,7 @@ function App() {
         <Route path='/pants' element={<MensPants/>}/>
         <Route path='/men/official' element={<MenOfficial/>}/>
         <Route path='/men/official/suits' element={<OfficialSuits/>}/>
+        <Route path='/men/smartcasual' element={<MenSmart_Casual/>}/>
       </Routes>
       <Footer/>
     </div>
